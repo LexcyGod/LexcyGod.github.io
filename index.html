@@ -1,91 +1,279 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Layout Halaman Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEXSHOP</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: #111;
+      text-align: center;
+      background-color: #eee;
+      padding: 30px;
+    }
+
+    .produk {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .slideshow-container {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
       color: white;
-    }
-
-    .header {
-      background-color: #b71c1c;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
       font-weight: bold;
-    }
-
-    .nav {
-      background-color: #ff8f00;
-      padding: 15px;
-      text-align: center;
       font-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      border-radius: 5px;
+      transform: translateY(-50%);
     }
 
-    .main {
-      display: flex;
-      padding: 20px;
-    }
+    .prev { left: 0; }
+    .next { right: 0; }
 
-    .sidebar {
-      background-color: #d84315;
-      padding: 20px;
-      width: 20%;
-      text-align: center;
-    }
-
-    .content {
-      background-color: #ffa000;
-      padding: 20px;
-      width: 60%;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .footer {
-      background-color: #b71c1c;
-      padding: 15px;
-      text-align: center;
+    .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
       font-size: 16px;
-      margin-top: 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    /* Responsive: Stack layout on smaller screens */
-    @media (max-width: 768px) {
-      .main {
-        flex-direction: column;
-      }
+    .btn:hover {
+      background-color: #218838;
+    }
 
-      .sidebar, .content {
-        width: 100%;
-        margin-bottom: 10px;
-      }
+    .btn-dana {
+      background-color: #008FE5;
+    }
+
+    .btn-dana:hover {
+      background-color: #0074b8;
+    }
+
+    .total {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Styling khusus untuk area metode pembayaran */
+    .metode-pembayaran {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    .metode-pembayaran > div {
+      text-align: center;
+      max-width: 150px;
+    }
+
+    .metode-pembayaran img {
+      border-radius: 10px;
+      max-width: 150px;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">Header</div>
-  <div class="nav">Menu Navigasi</div>
+  <div class="produk">
+    <h1>LEXSHOP</h1>
 
-  <div class="main">
-    <div class="sidebar">Sidebar</div>
-    <div class="content">Content</div>
-    <div class="sidebar">Sidebar</div>
+    <!-- Slideshow Paket Diamond -->
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyIWu_J7BTE1gov18Zb7BY5d3TXiPt79txQ&s" alt="Paket 50 Diamond">
+        <p><strong>50 Diamond</strong></p>
+      </div>
+      <div class="mySlides">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3PlTUWAJzj3UbaV-v_qEf73AtE_2qMO5egJKBOX1Ggy4dsKJFsG_gq_zYuYn08DUwzqI&usqp=CAU" alt="Paket 120 Diamond">
+        <p><strong>120 Diamond</strong></p>
+      </div>
+      <div class="mySlides">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_fhTQmNC4SVUUdRZRvWQp3-UcLAZ3FURzxgoCV4yuqVf2c1eXylPnply7G62raL4MvS8&usqp=CAU" alt="Paket 250 Diamond">
+        <p><strong>250 Diamond</strong></p>
+      </div>
+        <div class="mySlides">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA1rjB9nvSJ9Fz3Ns-LYQwQtiNbNHRDV9tKo5sI0uiCt2UbaWquI_1VVAyzcOty3Nj1BQ&usqp=CAU" alt="Paket 500 Diamond">
+  <p><strong>500 Diamond</strong></p>
+</div>
+
+      <button class="prev" onclick="plusSlides(-1)">❮</button>
+      <button class="next" onclick="plusSlides(1)">❯</button>
+    </div>
+
+    <!-- Harga per paket -->
+    <p>Harga paket: <strong id="hargaSatuanText">Rp10.000</strong></p>
+
+    <!-- Jumlah paket (jumlah top up paket) -->
+    <label for="jumlah">Jumlah Paket:</label>
+    <input type="number" id="jumlah" value="1" min="1" onchange="hitungTotal()">
+
+    <!-- Total harga -->
+    <div class="total" id="totalHarga">Total: Rp10.000</div>
+    <button class="btn" onclick="prosesBeli()">Beli Sekarang</button>
+
+    <!-- Metode Pembayaran -->
+    <h3>Metode Pembayaran:</h3>
+
+    <div class="metode-pembayaran">
+      <!-- DANA -->
+      <div>
+        <p><strong>DANA</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgvh9WdPhu_uvLotvj4tX4dLijDXKzF7il-g&s" alt="QRIS DANA" style="background-color:#eee; padding:10px;">
+        <br><br>
+        <a href="https://link.dana.id/qris-anda" target="_blank">
+          <button class="btn btn-dana" style="background-color:#555;">Bayar via DANA</button>
+        </a>
+      </div>
+
+      <!-- QRIS  -->
+      <div>
+        <p><strong>QRIS</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZntoZfru6Yy1HMFOznQrwVb1Jl7pcEFwKpA&s" style="background:#eee; padding:10px;">
+        <br><br>
+        <a href="https://qris.id/" target="_blank">
+          <button class="btn" style="background-color:#555;">Bayar via QRIS</button>
+        </a>
+      </div>
+
+      <!-- GOPAY -->
+      <div>
+        <p><strong>GOPAY</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaM46KO8yCHUR9HSg037gIDlvwH5_3cYSAvXof4xYqL554mOr5W7HDar5XiDhqEDgPk-A&usqp=CAU" alt="QRIS GOPAY" style="background:#eee; padding:10px;">
+        <br><br>
+        <a href="https://gopay.co.id/" target="_blank">
+          <button class="btn" style="background-color:#555; color:white;">Bayar via GOPAY</button>
+        </a>
+      </div>
+
+      <!-- OVO -->
+      <div>
+        <p><strong>OVO</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsOljOn_hXUhep4HCbnfjZyz3jarYbKKXSow&s" alt="QRIS OVO" style="background:#eee; padding:10px;">
+        <br><br>
+        <a href="https://ovo.id/" target="_blank">
+          <button class="btn" style="background-color:#555; color:white;">Bayar via OVO</button>
+        </a>
+      </div>
+      
+      <!-- ShopeePay -->
+  <div>
+    <p><strong>ShopeePay</strong></p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGg-dpbngPWXspwDs2jEvYjASvFKPksBHAw&s" alt="ShopeePay" style="background:#eee; padding:10px;">
+    <br><br>
+    <a href="https://shopee.co.id/" target="_blank">
+      <button class="btn" style="background-color:#555; color:white;">Bayar via ShopeePay</button>
+    </a>
   </div>
 
-  <div class="footer">Footer</div>
+  <!-- mBCA -->
+  <div>
+    <p><strong>mBCA</strong></p>
+    <img src="https://play-lh.googleusercontent.com/ggZzVVDWsTm7gSnVl8m3cNFgoeUN2r7dhAZdB8lz0d_s6ZcYOkvUQdbG3dPU5LHZnWvc" alt="mBCA" style="background:#eee; padding:10px;">
+    <br><br>
+    <a href="https://www.bca.co.id/id/individual/mbca" target="_blank">
+      <button class="btn" style="background-color:#555; color:white;">Bayar via mBCA</button>
+    </a>
+  </div>
+</div>
+  
+ 
+    <br>
+    <a href="https://www.instagram.com/lexshop/" target="_blank">
+      <button class="btn" style="background-color: #ff6600;">LEXSHOP Instagram</button>
+    </a>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+
+    // Harga per paket diamond
+    const hargaArray = [10000, 22000, 42000, 60000]; // Rp 10.000, 22.000, 42.000, 60000
+    // Jumlah diamond per paket
+    const diamondArray = [50, 120, 250, 500];
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+
+      // Update harga dan paket diamond
+      const hargaSekarang = hargaArray[slideIndex - 1];
+      const diamondSekarang = diamondArray[slideIndex - 1];
+
+      document.getElementById("hargaSatuanText").innerText = 
+        "Rp" + hargaSekarang.toLocaleString("id-ID") + " (untuk " + diamondSekarang + " diamond)";
+
+      hitungTotal();
+    }
+
+    function hitungTotal() {
+      let jumlah = parseInt(document.getElementById("jumlah").value);
+      if (jumlah < 1 || isNaN(jumlah)) {
+        jumlah = 1;
+        document.getElementById("jumlah").value = 1;
+      }
+
+      const hargaSekarang = hargaArray[slideIndex - 1];
+      const total = hargaSekarang * jumlah;
+
+      document.getElementById("totalHarga").innerText = "Total: Rp" + total.toLocaleString("id-ID");
+    }
+
+    function prosesBeli() {
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const hargaSekarang = hargaArray[slideIndex - 1];
+      const diamondSekarang = diamondArray[slideIndex - 1];
+      const total = hargaSekarang * jumlah;
+      const totalDiamond = diamondSekarang * jumlah;
+
+      alert("Kamu membeli " + jumlah + " paket\nTotal diamond: " + totalDiamond + "\nTotal bayar: Rp" + total.toLocaleString("id-ID"));
+    }
+
+    // Saat halaman dibuka
+    window.onload = function () {
+      showSlides(slideIndex);
+    }
+  </script>
 
 </body>
 </html>
